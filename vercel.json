@@ -1,3 +1,41 @@
 {
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "devCommand": "pnpm dev",
+  "env": {
+    "NEXT_PUBLIC_BASE_PATH": {
+      "description": "Base path for the application (optional, use for demo mode)",
+      "value": "",
+      "required": false
+    },
+    "AUTH_SECRET": {
+      "description": "Secret for NextAuth.js - generate with: https://generate-secret.vercel.app/32",
+      "value": "",
+      "required": true
+    },
+    "AI_GATEWAY_API_KEY": {
+      "description": "API key for Vercel AI Gateway (optional on Vercel, uses OIDC by default)",
+      "value": "",
+      "required": false
+    },
+    "BLOB_READ_WRITE_TOKEN": {
+      "description": "Token for Vercel Blob storage - https://vercel.com/docs/storage/vercel-blob",
+      "value": "",
+      "required": false
+    },
+    "POSTGRES_URL": {
+      "description": "PostgreSQL connection URL - https://vercel.com/docs/storage/vercel-postgres",
+      "value": "",
+      "required": false
+    },
+    "REDIS_URL": {
+      "description": "Redis connection URL - https://vercel.com/docs/storage/vercel-kv",
+      "value": "",
+      "required": false
+    }
+  },
+  "outputDirectory": ".next",
+  "nodeVersion": "22.x",
+  "packageManager": "pnpm@10.32.1"
 }
